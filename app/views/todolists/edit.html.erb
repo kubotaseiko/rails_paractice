@@ -1,0 +1,10 @@
+<h1>編集画面</h1>
+<%= form_with model:@list, url:"/todolists/#{@list.id}", local:true do |f| %>
+  <h4>タイトル</h4>
+    <%= f.text_field :title %>
+  <h4>本文</h4>
+  <%= f.text_area :body %>
+  <p>画像</p>
+  <%= attachment_image_tag list, :image, :fill, 100, 100, format: 'jpeg' %>
+  <%= f.submit '保存' %>
+<% end %>
